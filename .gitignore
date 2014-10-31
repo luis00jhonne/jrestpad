@@ -18,3 +18,4 @@ vendor/*
 
 composer.lock
 composer.phar
+/nbproject/private/
