@@ -1,29 +1,76 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Slim MVC <?php if(isset($page_title)) echo "| " . $page_title  ?></title>
-        <meta name="description"   content="">
-        <meta name="viewport"      content="width=device-width">
-        <link rel="stylesheet" href="public/assets/css/main.css">
-    </head>
-    <body class="<?php echo $page_body ?>">
+<html>
 
-        <div class="container">
-            <?php if(isset($view_filename)) require $view_filename ?>
-        </div>
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JRESTPad <?php if(isset($page_title)) echo "| " . $page_title  ?></title>
+
+    <!-- Core CSS - Include with every page -->
+    <link href="public/assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="public/assets/font-awesome/css/font-awesome.css" rel="stylesheet">
+
+    <!-- Page-Level Plugin CSS - Blank -->
+
+    <!-- SB Admin CSS - Include with every page -->
+    <link href="public/assets/css/sb-admin.css" rel="stylesheet">
     
-        <footer>
-            <p><br>
-                Made with love <span>♥</span> by 
-                <a href="http://defidelis.herokuapp.com" title="Rafael Fidelis">Rafael Fidelis</a>
-            </p>
-        </footer>
+    <!-- Other CSS File -->
+    <link href="public/assets/css/main.css" rel="stylesheet">
 
-        <script src="public/assets/js/main.js"></script>
-    </body>
+</head>
+<body>
+    <!-- Begin page content -->
+    <div class="container">
+      <div class="page-header">
+        <h1>JRESTPad</h1>
+      </div>
+      <p class="lead">Este é um aplicativo acadêmico RESTFul e AJAX, usado para ser um Editor de Texto colaborativo.</p>
+<div class="panel-body">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <form role="form">
+					<div class="form-group">
+                                            <label>Mensagens</label>
+                                            <textarea class="form-control col-lg-5" rows="10"></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Text Input with Placeholder</label>
+                                            <input class="form-control" placeholder="Digite seu texto e tecle Enter">
+                                        </div>
+                                        <button type="submit" class="btn btn-default">Submit Button</button>
+                                        <button type="reset" class="btn btn-default">Reset Button</button>
+                                    </form>
+                                </div>
+                                <!-- /.col-lg-6 (nested) -->
+                            </div>
+                            <!-- /.row (nested) -->
+                        </div>
+                        <!-- /.panel-body -->
+    </div>
+
+    <div class="footer">
+      <div class="container">
+        <p class="text-muted">Desenvolvido por <a href="http://www.facebook.com/ljhonne" target="_blank">Luis Jhonne.</a></p>
+      </div>
+    </div>
+
+
+
+    <!-- Core Scripts - Include with every page -->
+    <script src="public/assets/js/jquery-1.10.2.js"></script>
+    <script src="public/assets/js/bootstrap.min.js"></script>
+    <script src="public/assets/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+
+    <!-- Page-Level Plugin Scripts - Blank -->
+
+    <!-- SB Admin Scripts - Include with every page -->
+    <script src="public/assets/js/sb-admin.js"></script>
+
+    <!-- Page-Level Demo Scripts - Blank - Use for reference -->
+
+</body>
+
 </html>
