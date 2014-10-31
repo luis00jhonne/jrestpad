@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -15,7 +13,7 @@
     <!-- Page-Level Plugin CSS - Blank -->
 
     <!-- SB Admin CSS - Include with every page -->
-    <link href="public/assets/css/sb-admin.css" rel="stylesheet">
+    <!--<link href="public/assets/css/sb-admin.css" rel="stylesheet">-->
     
     <!-- Other CSS File -->
     <link href="public/assets/css/main.css" rel="stylesheet">
@@ -30,20 +28,26 @@
       <p class="lead">Este é um aplicativo acadêmico RESTFul e AJAX, usado para ser um Editor de Texto colaborativo.</p>
 <div class="panel-body">
                             <div class="row">
-                                <div class="col-lg-6">
+                                <!--<div class="col-lg-6">-->
                                     <form role="form">
 					<div class="form-group">
-                                            <label>Mensagens</label>
-                                            <textarea class="form-control col-lg-5" rows="10"></textarea>
+                                            <div class="panel panel-default ()">
+                                                <div class="panel-heading">
+                                                    <h3 class="panel-title">O conteúdo será exibido abaixo</h3>
+                                                </div>
+                                                <div class="panel-body">
+                                                    
+                                                </div>    
+                                                <div class="panel-footer">Panel footer</div>
+                                            </div>
                                         </div>
                                         <div class="form-group">
-                                            <label>Text Input with Placeholder</label>
                                             <input class="form-control" placeholder="Digite seu texto e tecle Enter">
                                         </div>
                                         <button type="submit" class="btn btn-default">Submit Button</button>
                                         <button type="reset" class="btn btn-default">Reset Button</button>
                                     </form>
-                                </div>
+                                <!--</div>-->
                                 <!-- /.col-lg-6 (nested) -->
                             </div>
                             <!-- /.row (nested) -->
@@ -57,8 +61,7 @@
       </div>
     </div>
 
-
-
+    
     <!-- Core Scripts - Include with every page -->
     <script src="public/assets/js/jquery-1.10.2.js"></script>
     <script src="public/assets/js/bootstrap.min.js"></script>
@@ -70,7 +73,7 @@
     <script src="public/assets/js/sb-admin.js"></script>
 
     <!-- Page-Level Demo Scripts - Blank - Use for reference -->
-
+    <script src="public/assets/js/main.js"></script>
 </body>
 
 </html>
