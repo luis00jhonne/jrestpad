@@ -35,7 +35,7 @@
                                                 <div class="panel-heading">
                                                     <h3 class="panel-title">O conteúdo será exibido abaixo</h3>
                                                 </div>
-                                                <div class="panel-body">
+                                                <div class="panel-body" id="resultado">
                                                     
                                                 </div>    
                                                 <div class="panel-footer">Panel footer</div>
@@ -44,7 +44,7 @@
                                         <div class="form-group">
                                             <input class="form-control" placeholder="Digite seu texto e tecle Enter">
                                         </div>
-                                        <button type="submit" class="btn btn-default">Submit Button</button>
+                                        <button type="submit" id="btnSubmit" class="btn btn-default">Submit Button</button>
                                         <button type="reset" class="btn btn-default">Reset Button</button>
                                     </form>
                                 <!--</div>-->
@@ -63,15 +63,13 @@
 
     
     <!-- Core Scripts - Include with every page -->
-    <script src="public/assets/js/jquery-1.10.2.js"></script>
+    <script src="public/assets/js/jquery-1.11.1.js"></script>
     <script src="public/assets/js/bootstrap.min.js"></script>
-    <script src="public/assets/js/plugins/metisMenu/jquery.metisMenu.js"></script>
-
-    <!-- Page-Level Plugin Scripts - Blank -->
-
     <!-- SB Admin Scripts - Include with every page -->
+    <script src="public/assets/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+   
     <script src="public/assets/js/sb-admin.js"></script>
-
+    
     <!-- Page-Level Demo Scripts - Blank - Use for reference -->
     <script src="public/assets/js/main.js"></script>
 </body>

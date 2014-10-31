@@ -1,7 +1,7 @@
 <?php 
 
 Router\Helper::map("pages", array(
-	"(/|/home)/?"	=> array("get" => "home"),
+	"(/|/home)/?"	=> array("get" => "home", "post" => "salvaMensagem"),
 	"/about_us/?"	=> array("get" => "about_us")
 ));
 
