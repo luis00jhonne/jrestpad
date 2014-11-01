@@ -1,15 +1,23 @@
-$(document).ready(function(){
-    $("#btnSubmit").click(function(event) {
-        event.preventDefault();
-        $.ajax({
-            url: 'index.php',
-            type: 'POST',
-            async: true,
-            context: jQuery('#resultado'),
-            success: function(data){
-                this.append(data);
-            }
-        });    
+$(document).ready(function () {
+    $("#enviar").click(
+        function(){
+            var content = $("#conteudo").val();
+           $.ajax({
+                        type: 'POST',
+                        dataType: 'JSON',
+                        data: { conteudo:content },
+                        url: 'index.php',
+                        async: true,
+                        context: jQuery('#resultado'),
+                        error: function () {
+                            alert('Erro ao realizar a requisição');
+                       },
+                       success: function (retorno) {
+                           $("#conteudo").append(retorno);
+                        }
+
+                    });
     });
+    
     
 });
