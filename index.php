@@ -10,6 +10,8 @@
 
 class MyApp {
 	public static function __init() {
+            
+            session_start();
 		
 		// current dir 
 		define("ROOT" , __DIR__); 

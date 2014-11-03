@@ -18,18 +18,34 @@ class PagesController extends BaseController {
 
         $this->render("pages/about_us");
     }
+    protected function _notes(){
+    	$this->page_title = 'Experimente';
+    	
+    	$this->render("pages/notes");
+    	
+    }
 
     protected function _salva() {
+    	
+    	if ( !empty($this->request_params['conteudo']) ){
+    		//$session = !empty($_SESSION['conteudo']) ? $_SESSION['conteudo'] : null;
+    		//        if ( isset( $this->request_params ['conteudo'] ) ){
+    		//           $this->JSONResponse( array( 'conteudo' => $this->request_params ['conteudo'] ) );
+    		//        } else {
+    		//           $this->JSONResponse(['conteudo'=> 'amor']);
+    		//        }
+    		//
+    		///echo !empty( $this->request_params['conteudo'] ) ? $this->request_params['conteudo'] : 'no content';
+    
+    				// var_dump($_POST);
+    				//echo 'conteudo';
+    				//$_SESSION['conteudo'] = $saida;
+    				//$this->JSONResponse( ['conteudo' => $saida] );
+    		echo 'Die';
+    	}
         
-        $this->JSONResponse( array('conteudo'=> 'amor'));
-        if ( isset( $this->request_params ['conteudo'] ) ){
-           $this->JSONResponse( array( 'conteudo' => $this->request_params ['conteudo'] ) );
-        } else {
-           $this->JSONResponse(['conteudo'=> 'amor']);
-        }
-        
-        
-        
+       
+             
     }
     
 }

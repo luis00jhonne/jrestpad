@@ -1,0 +1,27 @@
+<div class="page-header">
+	<a href="index.php"><h1>JRESTPad</h1></a>
+</div>
+<p class="lead">
+	Este é um aplicativo acadêmico RESTFul e AJAX, usado para ser um Editor
+	de Texto colaborativo. <a href="about_us">Leia mais.</a>
+</p>
+<div class="panel-body">
+	<div class="row">
+		<form role="form">
+			<div class="form-group">
+				<div class="panel panel-default ()">
+					<div class="panel-heading">
+						<h3 class="panel-title">O conteúdo será exibido abaixo</h3>
+					</div>
+					<div class="panel-body" id="resultado"></div>
+				</div>
+			</div>
+			<div class="form-group">
+				<input id="conteudo" class="form-control" placeholder="Digite seu texto" onkeypress="return !(event.keyCode==13);" >
+			</div>
+			<button type="button" id="enviar" class="btn btn-default" onclick="loadDoc()">Enviar</button>
+		</form>
+	</div>
+	<!-- /.row (nested) -->
+</div>
+<!-- /.panel-body -->

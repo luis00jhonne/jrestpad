@@ -26,6 +26,9 @@ class AppBootstrap {
 			
 			require_once LIB_FOLDER . "/routes_helper.php";
 			
+			/* Connection DB */
+			require_once ROOT . "/app/config/connection.php";
+			
 			/* Routes File */
 			require_once ROOT . "/app/config/routes.php" ;
 
