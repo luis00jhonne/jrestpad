@@ -26,25 +26,24 @@ class PagesController extends BaseController {
     }
 
     protected function _salva() {
-    	
-    	if ( !empty($this->request_params['conteudo']) ){
-    		//$session = !empty($_SESSION['conteudo']) ? $_SESSION['conteudo'] : null;
-    		//        if ( isset( $this->request_params ['conteudo'] ) ){
-    		//           $this->JSONResponse( array( 'conteudo' => $this->request_params ['conteudo'] ) );
-    		//        } else {
-    		//           $this->JSONResponse(['conteudo'=> 'amor']);
-    		//        }
-    		//
-    		///echo !empty( $this->request_params['conteudo'] ) ? $this->request_params['conteudo'] : 'no content';
-    
-    				// var_dump($_POST);
-    				//echo 'conteudo';
-    				//$_SESSION['conteudo'] = $saida;
-    				//$this->JSONResponse( ['conteudo' => $saida] );
-    		echo 'Die';
+    	if ( isset ($this->request_params['conteudo']) ){
+    		
+    		$conn = Connection::getConnection();
+    		$conn->setQuery( 'SELECT * FROM tb_mensagem WHERE cl_codigo_mensagem = 1' );
+    		$result = $conn->execut_query('simplex');
+    		
+    		//Concatena com a nova mensagem
+    		$novaMsg = $result['cl_mensagem'] . '\n' . $this->request_params['conteudo'];
+    		$dados['cl_codigo_mensagem'] = '1';
+    		$dados['cl_codigo_sala'] = '1';
+    		$dados['cl_mensagem'] = $novaMsg;
+    		
+    		$conn->update($dados,"tb_mensagem","cl_codigo_mensagem", null, true); //Atualiza a mensagem no servidor
+    		
+    		//Retorna a mensagem nova
+    		echo $novaMsg;
+    		
     	}
-        
-       
              
     }
     

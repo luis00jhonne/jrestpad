@@ -20,9 +20,7 @@ class Connection {
     private $banco = NOME_BANCO; //Nome do banco de dados
     private $sgdb = SGDB; //Tipo de SGDB ha ser usado para a conexão.
     private $portaPg = PORT_POSTGRES; //Porta de comunicação do banco de dados POSTGRES
-    private $usuarioSistema = USUARIO_SISTEMA; //A variavel que quarda o nome do usuario do sistema.
     private $query; //Query para ser executado.
-    private $queryLog; //Query para registrar o log
     private static $instance;
     public $id; //ID de conexão com o banco
 
@@ -192,11 +190,6 @@ class Connection {
         if ($type_query == "resource") {
 
             if (mysqli_affected_rows($this->id) > 0) {
-
-                if ($log) {
-                    $this->queryLog = $this->query;
-                    $this->salvaLog();
-                }
                 return $result;
             }
         }
@@ -717,48 +710,4 @@ class Connection {
         return "SELECT * FROM " . $nomeTabela . " WHERE " . $condicao;
     }
 
-    /**
-     * Registra um log de todas os dados postados pelo usuário
-     * Salva as querys executadas com outras características
-     * executadas pela classe de conexão.
-     * @param $id = chave primaria resultante do insert.
-     * @return unknown_type
-     */
-    private function salvaLog($id = null) {
-
-        //TODO: Testar se na pesquisa foi informado algum valor
-        if (!empty($_POST)) {
-
-            $this->setQueryLog($id);
-
-            mysql_query($this->queryLog, $this->id);
-        }
-        return;
-    }
-
-    private function setQueryLog($id = null) {
-
-        //Faz a substituição se for uma query de INSERT
-        if (!empty($id)) {
-            $this->queryLog = str_replace("[ID]", $id, $this->queryLog);
-        }
-
-        //Informações do log
-        $usuario = !empty($this->usuarioSistema) ? $this->usuarioSistema : null;
-        $view = !empty($_SESSION['Navegacao']['MenuLateral']) ? $_SESSION['Navegacao']['MenuLateral'] : null;
-        $post = print_r($_POST, true);
-        $navegador = Server::navegador();
-        $ip = Server::ip();
-        $tipo = substr($this->queryLog, 0, 6);
-        $dataCadastro = date("Y-m-d H:i:s");
-        $municipio = defined('MUNICIPIO') ? MUNICIPIO : null;
-
-        $this->queryLog = mysql_real_escape_string($this->queryLog);
-
-        $this->queryLog = "INSERT INTO tb_log ( cl_codigo_view, cl_ip, cl_navegador, cl_tipo, cl_post, cl_query, cl_usuario, cl_data_cadastro, cl_codigo_municipio )
-		VALUES ( '$view', '$ip', '$navegador', '$tipo', '$post', '$this->queryLog','$usuario','$dataCadastro', '$municipio') ";
-    }
-
 }
-
-?>

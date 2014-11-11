@@ -61,6 +61,12 @@ class AppConfig {
 		define("PRESENTERS_FOLDER"		, APP_FOLDER		. "/presenters/"		); 
 		define("VENDOR_FOLDER" 			, ROOT 				. "/vendor/"			); 
 		define("LIB_FOLDER" 			, ROOT 				. "/libs/"				);
+		define("ENDERECO_BANCO", "localhost"); //Endereço do banco de dados
+		define("USUARIO", "root"); //Nome do usuário
+		define("SENHA", "qu3MMeDERAaoM3n051X"); //Senha de acesso ao banco de dados
+		define("NOME_BANCO", "jrestpad"); //Nome do banco de dados
+		define("PORT_POSTGRES", null); //POSTGRES do banco de dados
+		define("SGDB", null); //
 	}
 }
 ?>
