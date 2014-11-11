@@ -3,6 +3,9 @@ function loadDoc( conteudo ){
     
     loadAjax ( "POST", "index.php", "conteudo="+conteudo, resposta, true );
 }
+function resposta( texto, xml ){
+	document.getElementById('resultado').innerHTML = texto; //Adiciona o resultado à página 
+}
 
 $(document).ready( function (){
 	$("#resultado").keypress(function(e){
@@ -28,6 +31,3 @@ function deleta(){
 	
 }
 
-function resposta( texto, xml ){
-	document.getElementById('resultado').innerHTML = texto; //Adiciona o resultado à página 
-}
