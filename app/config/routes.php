@@ -1,10 +1,9 @@
 <?php 
 
 Router\Helper::map("pages", array(
-	"(/|/home)/?"	=> array("get" => "home", "post" => "salva"), //A rota do POST é index também
-	"(/|/home)/index?"	=> array("get" => "home" ),
-	"(/|/home)/about_us?"	=> array("get" => "about_us"),
-	"(/|/home)/notes/?"	=> array("get" => "notes")
+	"(/|/home)/?"	=> array("get" => "home" ), //A rota do POST é index também
+	"(/|/home)/:id?"	=> array("get" => "notes", "post" => "salva" ),
+	"(/|/home)/:id/json?"	=> array("get" => "show" ),
 ));
 
 // For more(more!!) examples see : //

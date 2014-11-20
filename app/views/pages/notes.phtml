@@ -1,12 +1,16 @@
-<div class="page-header">
-	<a href="index.php"><h1>JRESTPad</h1></a>
+<div id="noConnectionAlert" class="hide">Nenhuma conexão localizada.
+	Novas tentativas a cada 2 segundos.</div>
+<div id="menu-div">
+	<ul id="menu">
+	</ul>
 </div>
-<p class="lead">
-	Este é um aplicativo acadêmico RESTFul e AJAX, usado para ser um Editor
-	de Texto colaborativo.
-</p>
-<div class="panel panel-default">
-	<div class="panel-body">
-		<textarea id="resultado" class="areaConteudo"></textarea>
-    </div>
+
+<div id="text-div" align="center">
+	<textarea id="text"></textarea>
 </div>
+<input type="hidden" name="lastUpdate" id="lastUpdate" value="" />
+
+<script type="text/javascript" src="public/assets/js/jquery-1.11.1.js"></script>
+<script type="text/javascript" src="public/assets/js/new_main.js"></script>
+<script type="text/javascript" src="public/assets/js/dontpad.js"
+	charset="UTF-8"></script>
