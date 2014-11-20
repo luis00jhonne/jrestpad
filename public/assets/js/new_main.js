@@ -1,33 +1,20 @@
-function loadDoc( conteudo ){
-   // var conteudo = document.getElementById("resultado").value;
-    
-    loadAjax ( "POST", "index.php", "conteudo="+conteudo, resposta, true );
-}
-function resposta( texto, xml ){
-	document.getElementById('resultado').innerHTML = texto; //Adiciona o resultado à página 
-}
-
 $(document).ready( function (){
-	$("#resultado").keypress(function(e){
-		
-		var conteudo = this.value;
-		
-		if ( e.which == 8 ){
-			//alert('Backspace');
-		}
-		
-		if ( e.which == 13 ){ // Se for enter
-			if ( conteudo == '' ){ //Se não existe conteúdo
-				e.preventDefault();
-			} else {
-				loadDoc( conteudo );
-			}
+	$("#enviar").click(function(){
+		var content = $("#url").val();
+		if ( content == '' || content == null ){
+			alert('Informe a URL!');
+			return false;
+		} else {
+			$.ajax({
+				data: {sala:content },
+				url: document.location,
+		        contentType: "application/x-www-form-urlencoded;charset=UTF-8",
+		        type: "PUT",
+		        dataType: 'json',
+		        success: function(result) {
+		        	$(location).attr('href', result['novaUrl'] );
+		        }
+			});
 		}
 	});
 });
-function deleta(){
-	
-	
-	
-}
-

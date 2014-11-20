@@ -44,6 +44,16 @@ class PagesController extends BaseController {
     	}
              
     }
+    protected function _iniciar(){
+    	
+    	if ( isset($this->request_params['sala'])){
+    		
+    	}
+    	
+    	
+    	return $this->JSONResponse( array ( 'novaUrl' => '1') );
+    	
+    }
     
 }
 
