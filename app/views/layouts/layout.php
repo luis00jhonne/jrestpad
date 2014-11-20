@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="public/assets/css/main.css" />
