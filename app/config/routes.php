@@ -2,8 +2,7 @@
 Router\Helper::map ( "pages", array (
 		"(/|/home)/?" => array (
 				"get" => "home",
-				"put" => "iniciar",
-				"post" => "salva" 
+				"put" => "iniciar"
 		),
 		"(/|/home)/:id?" => array (
 				"get" => "notes",

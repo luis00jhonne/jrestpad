@@ -91,16 +91,12 @@ var dontpad = {
 			$.ajax({
 				data: {text:dontpad.$text.val()},
 				url: document.location,
-				//url: "_index.php",
 		        contentType: "application/x-www-form-urlencoded;charset=UTF-8",
 		        type: "POST",
 		        dataType: 'json',
 		        success: function(result) {
 		        	$('#lastUpdate').val(result);
-		        },
-		        error: function() {
-	        		dontpad.$noConnectionAlert.show();
-	        }
+		        }
 			});
 		}
 	},
