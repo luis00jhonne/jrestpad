@@ -90,7 +90,8 @@ var dontpad = {
 			dontpad.changed = false;			
 			$.ajax({
 				data: {text:dontpad.$text.val()},
-				url: document.documentURi,
+				url: document.location,
+				//url: "_index.php",
 		        contentType: "application/x-www-form-urlencoded;charset=UTF-8",
 		        type: "POST",
 		        dataType: 'json',
