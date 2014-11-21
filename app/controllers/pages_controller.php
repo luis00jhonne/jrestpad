@@ -19,6 +19,7 @@ class PagesController extends BaseController {
     			exit();
     			//$this->render("pages/index");
     		} else {
+    			$this->page_title = $this->params['id'];
     			$this->render("pages/notes");
     		}
     	}

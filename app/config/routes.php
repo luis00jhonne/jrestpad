@@ -6,7 +6,7 @@ Router\Helper::map ( "pages", array (
 		),
 		"(/|/home)/:id?" => array (
 				"get" => "notes",
-	//			"post" => "salva" 
+         		"post" => "atualiza" 
 		), // A rota do POST é index também
 		"(/|/home)/:id/json?" => array (
 				"get" => "show" 
