@@ -17,7 +17,6 @@ class PagesController extends BaseController {
     		if ( !$result ){ //Senão localizar nenhuma sala com o nome requisitado, redireciona para o index
     			header ( "Location: index.php");
     			exit();
-    			//$this->render("pages/index");
     		} else {
     			$this->page_title = $this->params['id'];
     			$this->render("pages/notes");

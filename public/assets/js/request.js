@@ -9,7 +9,6 @@ var dontpad = {
 	load: function() {
 		dontpad.$text = $('#text');
 		dontpad.$noConnectionAlert = $('#noConnectionAlert');
-		dontpad.setOnLoad();
 		dontpad.setOnResizeEvent();
 		dontpad.enableAutoSaveOrUpdate();
 		dontpad.setOnChangeTextEvent();		
@@ -146,44 +145,6 @@ var dontpad = {
 			dontpad.save();
 		});
 	},
-	
-	setOnLoad:function(){
-		$(window).load(function(){
-			dontpad.menu.loadLinks();
-		});
-	}
-	
-};
-
-
-dontpad.menu = {		
-	loadLinks: function() {
-		$.ajax({
-			url: document.location + ".menu.json", 
-			cache: false,
-			dataType: 'json',
-			success: function(result){ dontpad.menu.create(result); }
-		});		
-	},
-	
-	create: function(links) {
-		if (links.length > 0) {
-			var $menu = $('#menu');
-			$.each(links, function(index, link){
-				$menu.append(dontpad.menu.createItemFromPath(link));
-			});
-		}
-		dontpad.resize();
-	},
-	
-	createItemFromPath: function(path) {
-		var url = dontpad.menu.removeDuplicateSlashs(document.location + '/' + path);		
-		return "<li><a href='" + url + "'>" + path +"</a></li>";
-	},
-	
-	removeDuplicateSlashs: function(url) {
-		return 'http://' + url.replace('http://','').replace(/\/\//g, '\/');				
-	}
 	
 };
 
